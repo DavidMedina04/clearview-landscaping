@@ -126,7 +126,7 @@ function Hero() {
       <SiteHeader />
       <div className="hero-content page-shell">
         <p className="eyebrow eyebrow-light"><span /> LANDSCAPE DESIGN · REMODELING · BUILD</p>
-        <h1 id="hero-heading">Transform your<br />outdoor space.</h1>
+        <h1 id="hero-heading">Transform Your Outdoor Space</h1>
         <p className="hero-copy">Landscape remodeling, patios and pavers, outdoor living, turf, and irrigation—designed and built for the way you live in Southern California.</p>
         <div className="hero-actions">
           <Link href="#contact" className="button button-sage">Get a free project quote <ArrowRight size={16} aria-hidden="true" /></Link>
