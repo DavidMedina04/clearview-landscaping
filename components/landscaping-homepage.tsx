@@ -21,38 +21,38 @@ import {
 const services = [
   {
     number: '01',
-    title: 'Landscape design',
-    description: 'A thoughtful plan for how you want to live outside, shaped around your home and the Southern California climate.',
+    title: 'Full Yard Remodels',
+    description: 'Complete front and backyard transformations with hardscapes, turf, planting, and durable finishes built for everyday Southern California living.',
     icon: Compass,
   },
   {
     number: '02',
-    title: 'Hardscapes & patios',
-    description: 'Lasting structure and natural texture, from custom paver patios to retaining walls and walkways.',
+    title: 'Hardscapes & Patios',
+    description: 'Custom patios, walkways, and outdoor gathering spaces designed for shade, comfort, and long-term durability.',
     icon: Mountain,
   },
   {
     number: '03',
-    title: 'Turf & planting',
-    description: 'Lush, considered planting with the choice of premium artificial turf, sod, and water-wise native gardens.',
+    title: 'Pavers & Concrete',
+    description: 'Expert installation of pavers, concrete slabs, and surface finishes that add structure, function, and curb appeal.',
     icon: Sprout,
   },
   {
     number: '04',
-    title: 'Outdoor living',
-    description: 'Make more of home with considered pergolas, outdoor kitchens, fire features, and places to gather.',
+    title: 'Turf & Planting',
+    description: 'Clean, low-maintenance turf, drought-tolerant planting, and landscape beds that stay attractive year-round.',
     icon: Flame,
   },
   {
     number: '05',
-    title: 'Irrigation & drainage',
-    description: 'Smart irrigation, grading, and drainage solutions designed to protect your investment and conserve water.',
+    title: 'Irrigation & Drainage',
+    description: 'Smart irrigation planning, drainage solutions, and grading that protect your property and conserve water.',
     icon: Droplets,
   },
   {
     number: '06',
-    title: 'Lighting & details',
-    description: 'Warm, purposeful lighting and the finishing details that make a landscape feel complete after dark.',
+    title: 'Outdoor Kitchens & Fire Features',
+    description: 'Built-in BBQs, fire pits, seating areas, and practical outdoor living upgrades for entertaining and relaxing.',
     icon: Lightbulb,
   },
 ]
@@ -105,12 +105,12 @@ function SiteHeader() {
           <Link href="#about">About</Link>
           <Link href="#contact">Contact</Link>
         </nav>
-        <Link href="#contact" className="button button-dark header-cta">Request a quote <ArrowUpRight size={15} aria-hidden="true" /></Link>
+        <Link href="#contact" className="button button-dark header-cta">Request a Quote <ArrowUpRight size={15} aria-hidden="true" /></Link>
         <details className="mobile-nav">
           <summary aria-label="Open navigation menu"><span className="menu-lines" aria-hidden="true" /></summary>
           <nav aria-label="Mobile navigation">
             <Link href="#home">Home</Link><Link href="#services">Services</Link><Link href="#projects">Projects</Link><Link href="#about">About</Link><Link href="#contact">Contact</Link>
-            <Link href="#contact" className="button button-dark">Request a quote <ArrowUpRight size={15} aria-hidden="true" /></Link>
+            <Link href="#contact" className="button button-dark">Request a Quote <ArrowUpRight size={15} aria-hidden="true" /></Link>
           </nav>
         </details>
       </div>
@@ -125,12 +125,12 @@ function Hero() {
       <div className="hero-shade" />
       <SiteHeader />
       <div className="hero-content page-shell">
-        <p className="eyebrow eyebrow-light"><span /> LANDSCAPE DESIGN · REMODELING · BUILD</p>
-        <h1 id="hero-heading">Transform Your Outdoor Space</h1>
-        <p className="hero-copy">Landscape remodeling, patios and pavers, outdoor living, turf, and irrigation—designed and built for the way you live in Southern California.</p>
+        <p className="eyebrow eyebrow-light"><span /> FULL-SERVICE LANDSCAPING · RIVERSIDE</p>
+        <h1 id="hero-heading">Complete Outdoor<br />Transformations</h1>
+        <p className="hero-copy">Full front and backyard remodels, hardscapes, turf, irrigation, and outdoor living spaces built for Riverside and Southern California homes.</p>
         <div className="hero-actions">
-          <Link href="#contact" className="button button-sage">Get a free project quote <ArrowRight size={16} aria-hidden="true" /></Link>
-          <Link href="#projects" className="button button-glass">View our projects <ArrowDown size={15} aria-hidden="true" /></Link>
+          <Link href="#contact" className="button button-sage">Request a Quote <ArrowRight size={16} aria-hidden="true" /></Link>
+          <Link href="#projects" className="button button-glass">View Our Work <ArrowDown size={15} aria-hidden="true" /></Link>
         </div>
         <div className="hero-location"><MapPin size={14} aria-hidden="true" /> RIVERSIDE · INLAND EMPIRE · SOUTHERN CALIFORNIA</div>
       </div>
@@ -141,10 +141,10 @@ function Hero() {
 
 function TrustStrip() {
   const highlights = [
-    { title: 'Thoughtful by design', copy: 'Built around the way you live', icon: Compass },
-    { title: 'Made for our climate', copy: 'Water-wise, lasting choices', icon: Leaf },
-    { title: 'From plan to planting', copy: 'One team, start to finish', icon: ShieldCheck },
-    { title: 'Locally rooted', copy: 'Serving Southern California', icon: MapPin },
+    { title: 'Built for Southern California', copy: 'Durable, water-wise solutions', icon: Compass },
+    { title: 'Full-service landscaping', copy: 'From design to final detail', icon: Leaf },
+    { title: 'Clear, honest guidance', copy: 'Straightforward recommendations', icon: ShieldCheck },
+    { title: 'Local professionals', copy: 'Serving Riverside and beyond', icon: MapPin },
   ]
   return (
     <section className="trust-strip" aria-label="The ClearView difference">
@@ -165,7 +165,7 @@ function ServicesSection() {
   return (
     <section className="services-section section-pad" id="services">
       <div className="page-shell">
-        <div className="services-heading"><SectionIntro eyebrow="Landscaping services" title={<>Designed outdoors.<br />Built to last.</>} copy="Complete landscape remodeling, patios and pavers, outdoor kitchens, turf, planting, and irrigation—from the first plan through installation." /><Link href="#contact" className="text-link">Explore all services <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
+        <div className="services-heading"><SectionIntro eyebrow="Landscaping services" title={<>Complete outdoor<br />transformations.</>} copy="From full yard remodels and pavers to turf, planting, irrigation, and outdoor living, we build spaces that work beautifully for everyday life." /><Link href="#contact" className="text-link">Explore Services <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
         <div className="services-grid">
           {services.map(({ number, title, description, icon: Icon }) => (
             <article className="service-card" key={number}>
@@ -174,7 +174,7 @@ function ServicesSection() {
             </article>
           ))}
         </div>
-        <p className="services-note"><Trees size={16} aria-hidden="true" /> Also offering commercial landscapes, drought-tolerant rock, grading, retaining walls, and more.</p>
+        <p className="services-note"><Trees size={16} aria-hidden="true" /> Also offering retaining walls, drought-tolerant landscaping, grading, and other residential landscape upgrades.</p>
       </div>
     </section>
   )
@@ -184,7 +184,7 @@ function ProjectsSection() {
   return (
     <section className="projects-section section-pad" id="projects">
       <div className="page-shell">
-        <div className="projects-heading"><SectionIntro eyebrow="Recent projects" title={<>Landscaping built<br />for everyday living.</>} copy="See what thoughtful planning and quality installation can do for a front yard, patio, or complete backyard." /><Link href="#contact" className="text-link">Start your project <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
+        <div className="projects-heading"><SectionIntro eyebrow="Recent projects" title={<>Outdoor upgrades<br />that add value.</>} copy="See recent front yard, patio, and backyard transformations built for Riverside and Southern California homeowners." /><Link href="#contact" className="text-link">View Our Work <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
         <div className="projects-grid">
           {projects.map((project, index) => (
             <article className={`project-card ${project.className}`} key={project.name}>
@@ -196,7 +196,7 @@ function ProjectsSection() {
             </article>
           ))}
         </div>
-        <div className="projects-footnote"><span>01 — 03</span><span>Every landscape tells a different story.</span></div>
+        <div className="projects-footnote"><span>01 — 03</span><span>Thoughtful landscaping for everyday living.</span></div>
       </div>
     </section>
   )
@@ -204,17 +204,17 @@ function ProjectsSection() {
 
 function AboutSection() {
   const values = [
-    'Design that belongs to your home and your everyday life.',
-    'Clear communication, honest recommendations, and no guesswork.',
-    'Water-wise materials and low-maintenance solutions that last.',
-    'Craftsmanship carried through every finish and final detail.',
+    'Front and backyard remodels designed around how you actually use the space.',
+    'Paver patios, retaining walls, and concrete work built for durability.',
+    'Drought-tolerant planting, turf, and irrigation that stay efficient and attractive.',
+    'Clear communication, dependable scheduling, and craftsmanship from start to finish.',
   ]
   return (
     <section className="about-section" id="about">
-      <div className="about-image"><Image src="/clearview-project-backyard.png" alt="A completed patio and backyard transformation with pavers, turf, and garden planting" fill sizes="(max-width: 760px) 100vw, 50vw" className="about-photo" /><div className="about-image-label">MADE FOR THE CALIFORNIA WAY OF LIFE</div></div>
-      <div className="about-content"><SectionIntro eyebrow="Why ClearView" title={<>Good planning.<br />Quality work.</>} copy="We bring landscape design and dependable construction together, with clear communication from the first walkthrough to the finished yard." />
+      <div className="about-image"><Image src="/clearview-project-backyard.png" alt="A completed patio and backyard transformation with pavers, turf, and garden planting" fill sizes="(max-width: 760px) 100vw, 50vw" className="about-photo" /><div className="about-image-label">BUILT FOR THE CALIFORNIA WAY OF LIFE</div></div>
+      <div className="about-content"><SectionIntro eyebrow="Why ClearView" title={<>Straightforward service.<br />Quality results.</>} copy="We bring practical design and dependable construction together to create outdoor spaces that look polished and perform well year-round." />
         <ul className="value-list">{values.map((value) => <li key={value}><span><Check size={13} aria-hidden="true" /></span>{value}</li>)}</ul>
-        <Link href="#contact" className="text-link">A little more about us <ArrowRight size={16} aria-hidden="true" /></Link>
+        <Link href="#contact" className="text-link">More About Us <ArrowRight size={16} aria-hidden="true" /></Link>
         <div className="about-stamp"><span>CV</span><small>ROOTED IN<br />RIVERSIDE, CA</small></div>
       </div>
     </section>
@@ -223,37 +223,37 @@ function AboutSection() {
 
 function ProcessSection() {
   const steps = [
-    { number: '01', title: 'Consultation', copy: 'We listen, walk the space, and learn what matters most to you.' },
-    { number: '02', title: 'Design', copy: 'Your ideas become a clear, considered plan with materials that fit.' },
-    { number: '03', title: 'Build', copy: 'Our team brings the plan to life, with care in every last detail.' },
+    { number: '01', title: 'Consultation', copy: 'We walk the space, listen to your goals, and recommend a plan that fits your property and budget.' },
+    { number: '02', title: 'Planning', copy: 'We confirm layout, materials, and scope so you know exactly what to expect before work begins.' },
+    { number: '03', title: 'Build', copy: 'Our crew installs the project with careful execution, quality craftsmanship, and clear communication throughout.' },
   ]
   return (
-    <section className="process-section section-pad"><div className="page-shell"><div className="process-heading"><SectionIntro eyebrow="How we work" title={<>From first walkthrough<br />to finished landscape.</>} copy="A straightforward process, a skilled local team, and a clear plan at every stage." /></div><div className="process-grid">{steps.map(({ number, title, copy }) => <article className="process-step" key={number}><span className="step-number">{number}</span><div className="step-rule" /><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
+    <section className="process-section section-pad"><div className="page-shell"><div className="process-heading"><SectionIntro eyebrow="How we work" title={<>From first walk-through<br />to final detail.</>} copy="A simple process, honest guidance, and a local team focused on getting the work done right." /></div><div className="process-grid">{steps.map(({ number, title, copy }) => <article className="process-step" key={number}><span className="step-number">{number}</span><div className="step-rule" /><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
   )
 }
 
 function TestimonialSection() {
   return (
-    <section className="testimonial-section"><div className="testimonial-inner page-shell"><div className="testimonial-mark" aria-hidden="true">“</div><div className="testimonial-quotes"><article className="testimonial-content"><p className="eyebrow eyebrow-light"><span /> KIND WORDS</p><blockquote>“They took the time to understand what we wanted, and the finished space feels like it was always meant to be there.”</blockquote><div className="testimonial-byline"><span className="testimonial-line" /><span>HOMEOWNER · RIVERSIDE, CA</span></div></article><article className="testimonial-content"><p className="eyebrow eyebrow-light"><span /> BUILT AROUND YOU</p><blockquote>“From the first conversation to the final details, everything felt considered, clear, and genuinely easy.”</blockquote><div className="testimonial-byline"><span className="testimonial-line" /><span>HOMEOWNER · INLAND EMPIRE</span></div></article></div></div></section>
+    <section className="testimonial-section"><div className="testimonial-inner page-shell"><div className="testimonial-mark" aria-hidden="true">“</div><div className="testimonial-quotes"><article className="testimonial-content"><p className="eyebrow eyebrow-light"><span /> KIND WORDS</p><blockquote>“They took the time to understand what we wanted, and the finished space feels like it was always meant to be there.”</blockquote><div className="testimonial-byline"><span className="testimonial-line" /><span>HOMEOWNER · RIVERSIDE, CA</span></div></article><article className="testimonial-content"><p className="eyebrow eyebrow-light"><span /> BUILT FOR EVERYDAY LIFE</p><blockquote>“From the first conversation to the final details, everything felt organized, professional, and genuinely easy.”</blockquote><div className="testimonial-byline"><span className="testimonial-line" /><span>HOMEOWNER · INLAND EMPIRE</span></div></article></div></div></section>
   )
 }
 
 function ServiceAreaSection() {
   const locations = ['Riverside', 'Inland Empire', 'Orange County', 'Los Angeles', 'Southern California']
   return (
-    <section className="service-area-section section-pad"><div className="page-shell service-area-inner"><div><SectionIntro eyebrow="Serving Southern California" title={<>Local landscape<br />design & installation.</>} copy="One experienced team for outdoor upgrades across Riverside, the Inland Empire, Orange County, Los Angeles, and nearby communities." /><Link href="#contact" className="text-link">Check your area <ArrowRight size={16} aria-hidden="true" /></Link></div><div className="area-list" aria-label="Service areas">{locations.map((place, index) => <div className="area-row" key={place}><span className="area-number">0{index + 1}</span><span>{place}</span><ArrowUpRight size={16} aria-hidden="true" /></div>)}</div></div></section>
+    <section className="service-area-section section-pad"><div className="page-shell service-area-inner"><div><SectionIntro eyebrow="Serving Southern California" title={<>Landscape upgrades<br />for Riverside and beyond.</>} copy="From full property remodels to patios, turf, and planting projects, we work with homeowners across Riverside, the Inland Empire, Orange County, and nearby communities." /><Link href="#contact" className="text-link">See Service Areas <ArrowRight size={16} aria-hidden="true" /></Link></div><div className="area-list" aria-label="Service areas">{locations.map((place, index) => <div className="area-row" key={place}><span className="area-number">0{index + 1}</span><span>{place}</span><ArrowUpRight size={16} aria-hidden="true" /></div>)}</div></div></section>
   )
 }
 
 function ContactSection() {
   return (
-    <section className="contact-section" id="contact"><div className="contact-image"><Image src="/clearview-hero-completed.png" alt="Completed Southern California backyard with paver patio, outdoor kitchen, fire feature, and planting" fill sizes="100vw" className="contact-photo" /></div><div className="contact-overlay" /><div className="contact-content page-shell"><p className="eyebrow eyebrow-light"><span /> READY TO GET STARTED?</p><h2>Let&apos;s plan your<br />yard transformation.</h2><p>Tell us about your landscape remodel, patio, turf, or outdoor living project. We&apos;ll help you take the next step.</p><Link href="mailto:hello@clearviewlandscaping.com?subject=Landscape%20project%20quote" className="button button-sage">Request a project quote <ArrowRight size={16} aria-hidden="true" /></Link><span className="contact-note">LOCAL TEAM · CLEAR ESTIMATES · QUALITY INSTALLATION</span></div></section>
+    <section className="contact-section" id="contact"><div className="contact-image"><Image src="/clearview-hero-completed.png" alt="Completed Southern California backyard with paver patio, outdoor kitchen, fire feature, and planting" fill sizes="100vw" className="contact-photo" /></div><div className="contact-overlay" /><div className="contact-content page-shell"><p className="eyebrow eyebrow-light"><span /> READY TO GET STARTED?</p><h2>Let&apos;s plan your<br />outdoor transformation.</h2><p>Tell us about your front yard, backyard, patio, turf, irrigation, or outdoor living project. We&apos;ll help you build a practical, lasting upgrade for your home.</p><Link href="mailto:hello@clearviewlandscaping.com?subject=Landscape%20project%20quote" className="button button-sage">Request a Quote <ArrowRight size={16} aria-hidden="true" /></Link><span className="contact-note">LOCAL TEAM · CLEAR ESTIMATES · QUALITY INSTALLATION</span></div></section>
   )
 }
 
 function SiteFooter() {
   return (
-    <footer className="site-footer"><div className="page-shell"><div className="footer-main"><div className="footer-brand-block"><BrandMark inverted /><p>Landscape design and installation,<br />serving Southern California homeowners.</p></div><div className="footer-column"><h2>Explore</h2><Link href="#services">Services</Link><Link href="#projects">Projects</Link><Link href="#about">About ClearView</Link></div><div className="footer-column"><h2>Get in touch</h2><Link href="#contact">Request a quote</Link><Link href="mailto:hello@clearviewlandscaping.com">Email our team</Link><span>Riverside, California</span></div><div className="footer-column footer-area"><h2>Service area</h2><span>Riverside · Inland Empire</span><span>Orange County · Los Angeles</span><span>Southern California</span></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} ClearView Landscaping</span><span>Designed for the outside.</span><Link href="#home">BACK TO TOP ↑</Link></div></div></footer>
+    <footer className="site-footer"><div className="page-shell"><div className="footer-main"><div className="footer-brand-block"><BrandMark inverted /><p>Landscape design and installation<br />for Southern California homeowners.</p></div><div className="footer-column"><h2>Explore</h2><Link href="#services">Services</Link><Link href="#projects">Projects</Link><Link href="#about">About ClearView</Link></div><div className="footer-column"><h2>Get in touch</h2><Link href="#contact">Request a Quote</Link><Link href="mailto:hello@clearviewlandscaping.com">Email our team</Link><span>Riverside, California</span></div><div className="footer-column footer-area"><h2>Service area</h2><span>Riverside · Inland Empire</span><span>Orange County · Los Angeles</span><span>Southern California</span></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} ClearView Landscaping</span><span>Built for the outdoors.</span><Link href="#home">BACK TO TOP ↑</Link></div></div></footer>
   )
 }
 
