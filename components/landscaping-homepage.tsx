@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import type { ReactNode } from 'react'
+import SiteHeader from '@/components/site-header'
+import { projects } from '@/lib/project-data'
 import {
   ArrowDown,
   ArrowRight,
@@ -22,99 +24,46 @@ const services = [
   {
     number: '01',
     title: 'Full Yard Remodels',
-    description: 'Complete front and backyard transformations with hardscapes, turf, planting, and durable finishes built for everyday Southern California living.',
+    href: '/services/full-yard-remodels',
+    description: 'Full front and backyard redesigns with updated layout, materials, planting, and drainage to improve function and curb appeal.',
     icon: Compass,
   },
   {
     number: '02',
-    title: 'Hardscapes & Patios',
-    description: 'Custom patios, walkways, and outdoor gathering spaces designed for shade, comfort, and long-term durability.',
+    title: 'Hardscape',
+    href: '/services/hardscape',
+    description: 'Pavers, concrete, walkways, patios, retaining walls, and outdoor structure work built for durability and clean lines.',
     icon: Mountain,
   },
   {
     number: '03',
-    title: 'Pavers & Concrete',
-    description: 'Expert installation of pavers, concrete slabs, and surface finishes that add structure, function, and curb appeal.',
-    icon: Sprout,
-  },
-  {
-    number: '04',
-    title: 'Turf & Planting',
-    description: 'Clean, low-maintenance turf, drought-tolerant planting, and landscape beds that stay attractive year-round.',
+    title: 'Outdoor Living',
+    href: '/services/outdoor-living',
+    description: 'Patios, BBQ islands, fire pits, pergolas, and gathering spaces designed for relaxing, cooking, and entertaining.',
     icon: Flame,
   },
   {
-    number: '05',
-    title: 'Irrigation & Drainage',
-    description: 'Smart irrigation planning, drainage solutions, and grading that protect your property and conserve water.',
+    number: '04',
+    title: 'Pools',
+    href: '/services/pools',
+    description: 'Pool-side landscaping, deck surfaces, planting, lighting, and drainage upgrades that make pool areas feel polished and functional.',
     icon: Droplets,
   },
   {
-    number: '06',
-    title: 'Outdoor Kitchens & Fire Features',
-    description: 'Built-in BBQs, fire pits, seating areas, and practical outdoor living upgrades for entertaining and relaxing.',
-    icon: Lightbulb,
-  },
-]
-
-const projects = [
-  {
-    name: 'The Riverside Patio',
-    category: 'Pavers, outdoor kitchen & fire feature',
-    location: 'Riverside, CA',
-    image: '/clearview-project-hardscape.png',
-    alt: 'Completed Southern California patio with pavers, outdoor kitchen, fire feature, and new planting',
-    className: 'project-featured',
-  },
-  {
-    name: 'A Backyard Made to Gather',
-    category: 'Patio, turf & backyard transformation',
-    location: 'Orange County, CA',
-    image: '/clearview-project-backyard.png',
-    alt: 'Finished family backyard with paver patio, pergola, fire pit, turf, and water-wise planting',
-    className: '',
-  },
-  {
-    name: 'A Fresh Start Out Front',
-    category: 'Front-yard remodel & turf',
-    location: 'Inland Empire, CA',
-    image: '/clearview-project-turf.png',
-    alt: 'Contemporary California front yard with native grasses, olive tree, and lawn',
-    className: '',
+    number: '05',
+    title: 'Planting',
+    href: '/services/planting',
+    description: 'Sod, drought-tolerant planting, decorative rock, trees, shrubs, and lawn replacement solutions tailored to Southern California.',
+    icon: Sprout,
   },
 ]
 
 function BrandMark({ inverted = false }: { inverted?: boolean }) {
   return (
-    <Link href="#home" className={`brand ${inverted ? 'brand-inverted' : ''}`} aria-label="ClearView Landscaping home">
+    <Link href="/" className={`brand ${inverted ? 'brand-inverted' : ''}`} aria-label="ClearView Landscaping home">
       <span className="brand-symbol" aria-hidden="true"><span /><span /><span /></span>
       <span className="brand-wordmark"><strong>clearview</strong><small>LANDSCAPING · CALIFORNIA</small></span>
     </Link>
-  )
-}
-
-function SiteHeader() {
-  return (
-    <header className="site-header">
-      <div className="header-inner">
-        <BrandMark inverted />
-        <nav className="desktop-nav" aria-label="Main navigation">
-          <Link href="#home">Home</Link>
-          <Link href="#services">Services</Link>
-          <Link href="#projects">Projects</Link>
-          <Link href="#about">About</Link>
-          <Link href="#contact">Contact</Link>
-        </nav>
-        <Link href="#contact" className="button button-dark header-cta">Request a Quote <ArrowUpRight size={15} aria-hidden="true" /></Link>
-        <details className="mobile-nav">
-          <summary aria-label="Open navigation menu"><span className="menu-lines" aria-hidden="true" /></summary>
-          <nav aria-label="Mobile navigation">
-            <Link href="#home">Home</Link><Link href="#services">Services</Link><Link href="#projects">Projects</Link><Link href="#about">About</Link><Link href="#contact">Contact</Link>
-            <Link href="#contact" className="button button-dark">Request a Quote <ArrowUpRight size={15} aria-hidden="true" /></Link>
-          </nav>
-        </details>
-      </div>
-    </header>
   )
 }
 
@@ -165,12 +114,12 @@ function ServicesSection() {
   return (
     <section className="services-section section-pad" id="services">
       <div className="page-shell">
-        <div className="services-heading"><SectionIntro eyebrow="Landscaping services" title={<>Complete outdoor<br />transformations.</>} copy="From full yard remodels and pavers to turf, planting, irrigation, and outdoor living, we build spaces that work beautifully for everyday life." /><Link href="#contact" className="text-link">Explore Services <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
+        <div className="services-heading"><SectionIntro eyebrow="Landscaping services" title={<>Complete outdoor<br />transformations.</>} copy="From full yard remodels and pavers to turf, planting, irrigation, and outdoor living, we build spaces that work beautifully for everyday life." /><Link href="/services/full-yard-remodels" className="text-link">Explore Services <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
         <div className="services-grid">
-          {services.map(({ number, title, description, icon: Icon }) => (
+          {services.map(({ number, title, href, description, icon: Icon }) => (
             <article className="service-card" key={number}>
               <div className="service-card-top"><span>{number}</span><Icon size={21} strokeWidth={1.5} aria-hidden="true" /></div>
-              <h3>{title}</h3><p>{description}</p><Link href="#contact" aria-label={`Ask us about ${title}`}><ArrowUpRight size={17} aria-hidden="true" /></Link>
+              <h3>{title}</h3><p>{description}</p><Link href={href} aria-label={`View ${title} service page`}><ArrowUpRight size={17} aria-hidden="true" /></Link>
             </article>
           ))}
         </div>
@@ -184,11 +133,11 @@ function ProjectsSection() {
   return (
     <section className="projects-section section-pad" id="projects">
       <div className="page-shell">
-        <div className="projects-heading"><SectionIntro eyebrow="Recent projects" title={<>Outdoor upgrades<br />that add value.</>} copy="See recent front yard, patio, and backyard transformations built for Riverside and Southern California homeowners." /><Link href="#contact" className="text-link">View Our Work <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
+        <div className="projects-heading"><SectionIntro eyebrow="Featured Projects" title={<>Outdoor upgrades<br />that add value.</>} copy="See recent front yard, patio, and backyard transformations built for Riverside and Southern California homeowners." /><Link href="/projects" className="text-link">Explore Projects <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
         <div className="projects-grid">
-          {projects.map((project, index) => (
+          {projects.slice(0, 3).map((project, index) => (
             <article className={`project-card ${project.className}`} key={project.name}>
-              <Link href="#contact" className="project-image-wrap" aria-label={`Discuss a project like ${project.name}`}>
+              <Link href={`/projects/${project.slug}`} className="project-image-wrap" aria-label={`View ${project.name} project`}>
                 <Image src={project.image} alt={project.alt} fill sizes={index === 0 ? '(max-width: 700px) 100vw, 58vw' : '(max-width: 700px) 100vw, 36vw'} className="project-image" />
                 <span className="project-arrow"><ArrowUpRight size={18} aria-hidden="true" /></span>
               </Link>
