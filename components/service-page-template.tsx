@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import SiteHeader from '@/components/site-header'
 
@@ -5,6 +6,8 @@ export type ServicePageProps = {
   service: {
     slug: string
     eyebrow: string
+    heroImage?: string
+    heroPosition?: string
     title: string
     overview: string
     intro: string
@@ -23,7 +26,16 @@ export default function ServicePageTemplate({ service }: ServicePageProps) {
       <SiteHeader />
       <main className="service-page">
       <section className="service-hero">
-        <div className="service-hero-image" style={{ backgroundImage: `url(${service.gallery[0]})` }} />
+        <Image
+          src={service.heroImage ?? service.gallery[0]}
+          alt=""
+          aria-hidden="true"
+          fill
+          unoptimized
+          sizes="100vw"
+          className={`service-hero-image${service.slug === 'full-yard-remodels' ? ' service-hero-image-contained' : ''}`}
+          style={{ objectPosition: service.heroPosition ?? 'center' }}
+        />
         <div className="service-hero-overlay" />
         <div className="page-shell service-hero-inner">
           <p className="eyebrow eyebrow-light"><span /> {service.eyebrow}</p>
@@ -68,31 +80,19 @@ export default function ServicePageTemplate({ service }: ServicePageProps) {
         </div>
       </section>
 
-      <section className="service-gallery section-pad">
+      <section className={`service-gallery section-pad${service.slug === 'full-yard-remodels' ? ' service-gallery-full-yard' : ''}`}>
         <div className="page-shell">
           <p className="eyebrow"><span /> Project Gallery</p>
-          <div className="gallery-grid">
+          <div className={`gallery-grid${service.slug === 'full-yard-remodels' ? ' gallery-grid-full-yard' : ''}`}>
             {service.gallery.map((image, index) => (
-              <div className="gallery-item" key={`${service.slug}-${index}`}>
+              <div
+                className="gallery-item"
+                data-gallery-image={service.slug === 'full-yard-remodels' ? image.match(/full-yard-(\d+)\.(?:jpg|jpeg|webp)$/)?.[1] : undefined}
+                key={`${service.slug}-${index}`}
+              >
                 <img src={image} alt={`${service.title} project preview ${index + 1}`} />
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="service-before-after section-pad">
-        <div className="page-shell">
-          <p className="eyebrow"><span /> Before / After</p>
-          <div className="before-after-grid">
-            <div className="before-after-card">
-              <span>Before</span>
-              <div className="before-after-placeholder before" />
-            </div>
-            <div className="before-after-card">
-              <span>After</span>
-              <div className="before-after-placeholder after" />
-            </div>
           </div>
         </div>
       </section>

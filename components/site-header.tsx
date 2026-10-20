@@ -29,15 +29,15 @@ export default function SiteHeader() {
               </div>
               <div className="services-feature">
                 <div className="services-feature-image" aria-hidden="true" />
-                <Link href="/#contact" className="button button-dark">Request a Quote <ArrowUpRight size={15} aria-hidden="true" /></Link>
+                <Link href="/contact" className="button button-dark">Request a Quote <ArrowUpRight size={15} aria-hidden="true" /></Link>
               </div>
             </div>
           </div>
           <Link href="/projects">Projects</Link>
-          <Link href="/#about">About</Link>
-          <Link href="/#contact">Contact</Link>
+          <Link href="/about">About</Link>
+          <Link href="/contact">Contact</Link>
         </nav>
-        <Link href="/#contact" className="button button-dark header-cta">Request a Quote <ArrowUpRight size={15} aria-hidden="true" /></Link>
+        <Link href="/contact" className="button button-dark header-cta">Request a Quote <ArrowUpRight size={15} aria-hidden="true" /></Link>
         <details className="mobile-nav">
           <summary aria-label="Open navigation menu"><span className="menu-lines" aria-hidden="true" /></summary>
           <nav aria-label="Mobile navigation">
@@ -53,9 +53,9 @@ export default function SiteHeader() {
               </nav>
             </details>
             <Link href="/projects">Projects</Link>
-            <Link href="/#about">About</Link>
-            <Link href="/#contact">Contact</Link>
-            <Link href="/#contact" className="button button-dark">Request a Quote <ArrowUpRight size={15} aria-hidden="true" /></Link>
+            <Link href="/about">About</Link>
+            <Link href="/contact">Contact</Link>
+            <Link href="/contact" className="button button-dark">Request a Quote <ArrowUpRight size={15} aria-hidden="true" /></Link>
           </nav>
         </details>
       </div>

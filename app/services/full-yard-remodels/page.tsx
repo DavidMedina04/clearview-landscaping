@@ -3,6 +3,8 @@ import ServicePageTemplate from '@/components/service-page-template'
 const service = {
   slug: 'full-yard-remodels',
   eyebrow: 'Full Yard Remodels',
+  heroImage: '/full-yard-remodels-hero.png',
+  heroPosition: 'center',
   title: 'Complete outdoor transformations for everyday living.',
   overview:
     'From the front entry to the back patio, we rework underused outdoor spaces into clean, functional, and inviting landscapes that fit the way your family lives in Southern California.',
@@ -16,10 +18,16 @@ const service = {
     'Planting and hardscape coordination for a cohesive finish',
   ],
   gallery: [
-    'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=900&q=80',
+    '/full-yard-1.jpg',
+    '/full-yard-2.jpg',
+    '/full-yard-3.jpg',
+    '/full-yard-4.jpg',
+    '/full-yard-5.jpg',
+    '/full-yard-6.jpg',
+    '/full-yard-7.jpg',
+    '/full-yard-8.webp',
+    '/full-yard-9.jpg',
+    '/full-yard-10.jpeg',
   ],
   details: [
     'A well-designed yard should feel connected to your home and easy to maintain. We create layout plans that improve flow, create usable zones, and align with your goals for entertaining, relaxing, and everyday function.',
@@ -31,7 +39,7 @@ const service = {
     { title: 'Outdoor Living', href: '/services/outdoor-living' },
   ],
   cta: 'Request a Quote',
-  ctaHref: 'mailto:hello@clearviewlandscaping.com?subject=Request%20a%20quote',
+  ctaHref: '/contact',
 }
 
 export default function Page() {

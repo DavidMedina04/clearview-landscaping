@@ -141,7 +141,7 @@ function ProjectsSection() {
                 <Image src={project.image} alt={project.alt} fill sizes={index === 0 ? '(max-width: 700px) 100vw, 58vw' : '(max-width: 700px) 100vw, 36vw'} className="project-image" />
                 <span className="project-arrow"><ArrowUpRight size={18} aria-hidden="true" /></span>
               </Link>
-              <div className="project-caption"><div><p>{project.category}</p><h3>{project.name}</h3></div><span><MapPin size={13} aria-hidden="true" />{project.location}</span></div>
+              <div className="project-caption"><div><p>{project.caption}</p><h3>{project.name}</h3></div><span><MapPin size={13} aria-hidden="true" />{project.location}</span></div>
             </article>
           ))}
         </div>
@@ -163,7 +163,7 @@ function AboutSection() {
       <div className="about-image"><Image src="/clearview-project-backyard.png" alt="A completed patio and backyard transformation with pavers, turf, and garden planting" fill sizes="(max-width: 760px) 100vw, 50vw" className="about-photo" /><div className="about-image-label">BUILT FOR THE CALIFORNIA WAY OF LIFE</div></div>
       <div className="about-content"><SectionIntro eyebrow="Why ClearView" title={<>Straightforward service.<br />Quality results.</>} copy="We bring practical design and dependable construction together to create outdoor spaces that look polished and perform well year-round." />
         <ul className="value-list">{values.map((value) => <li key={value}><span><Check size={13} aria-hidden="true" /></span>{value}</li>)}</ul>
-        <Link href="#contact" className="text-link">More About Us <ArrowRight size={16} aria-hidden="true" /></Link>
+        <Link href="/about" className="text-link">More About Us <ArrowRight size={16} aria-hidden="true" /></Link>
         <div className="about-stamp"><span>CV</span><small>ROOTED IN<br />RIVERSIDE, CA</small></div>
       </div>
     </section>
@@ -196,13 +196,13 @@ function ServiceAreaSection() {
 
 function ContactSection() {
   return (
-    <section className="contact-section" id="contact"><div className="contact-image"><Image src="/clearview-hero-completed.png" alt="Completed Southern California backyard with paver patio, outdoor kitchen, fire feature, and planting" fill sizes="100vw" className="contact-photo" /></div><div className="contact-overlay" /><div className="contact-content page-shell"><p className="eyebrow eyebrow-light"><span /> READY TO GET STARTED?</p><h2>Let&apos;s plan your<br />outdoor transformation.</h2><p>Tell us about your front yard, backyard, patio, turf, irrigation, or outdoor living project. We&apos;ll help you build a practical, lasting upgrade for your home.</p><Link href="mailto:hello@clearviewlandscaping.com?subject=Landscape%20project%20quote" className="button button-sage">Request a Quote <ArrowRight size={16} aria-hidden="true" /></Link><span className="contact-note">LOCAL TEAM · CLEAR ESTIMATES · QUALITY INSTALLATION</span></div></section>
+    <section className="contact-section" id="contact"><div className="contact-image"><Image src="/clearview-hero-completed.png" alt="Completed Southern California backyard with paver patio, outdoor kitchen, fire feature, and planting" fill sizes="100vw" className="contact-photo" /></div><div className="contact-overlay" /><div className="contact-content page-shell"><p className="eyebrow eyebrow-light"><span /> READY TO GET STARTED?</p><h2>Let&apos;s plan your<br />outdoor transformation.</h2><p>Tell us about your front yard, backyard, patio, turf, irrigation, or outdoor living project. We&apos;ll help you build a practical, lasting upgrade for your home.</p><Link href="/contact" className="button button-sage">Request a Quote <ArrowRight size={16} aria-hidden="true" /></Link><span className="contact-note">LOCAL TEAM · CLEAR ESTIMATES · QUALITY INSTALLATION</span></div></section>
   )
 }
 
 function SiteFooter() {
   return (
-    <footer className="site-footer"><div className="page-shell"><div className="footer-main"><div className="footer-brand-block"><BrandMark inverted /><p>Landscape design and installation<br />for Southern California homeowners.</p></div><div className="footer-column"><h2>Explore</h2><Link href="#services">Services</Link><Link href="#projects">Projects</Link><Link href="#about">About ClearView</Link></div><div className="footer-column"><h2>Get in touch</h2><Link href="#contact">Request a Quote</Link><Link href="mailto:hello@clearviewlandscaping.com">Email our team</Link><span>Riverside, California</span></div><div className="footer-column footer-area"><h2>Service area</h2><span>Riverside · Inland Empire</span><span>Orange County · Los Angeles</span><span>Southern California</span></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} ClearView Landscaping</span><span>Built for the outdoors.</span><Link href="#home">BACK TO TOP ↑</Link></div></div></footer>
+    <footer className="site-footer"><div className="page-shell"><div className="footer-main"><div className="footer-brand-block"><BrandMark inverted /><p>Landscape design and installation<br />for Southern California homeowners.</p></div><div className="footer-column"><h2>Explore</h2><Link href="#services">Services</Link><Link href="/projects">Projects</Link><Link href="/about">About ClearView</Link></div><div className="footer-column"><h2>Get in touch</h2><Link href="/contact">Request a Quote</Link><Link href="mailto:hello@clearviewlandscaping.com">Email our team</Link><span>Riverside, California</span></div><div className="footer-column footer-area"><h2>Service area</h2><span>Riverside · Inland Empire</span><span>Orange County · Los Angeles</span><span>Southern California</span></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} ClearView Landscaping</span><span>Built for the outdoors.</span><Link href="#home">BACK TO TOP ↑</Link></div></div></footer>
   )
 }
 

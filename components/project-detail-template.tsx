@@ -53,7 +53,7 @@ export default function ProjectDetailTemplate({ project }: { project: Project })
             <p className="eyebrow eyebrow-light"><span />Have a project in mind?</p>
             <h2>Let&apos;s plan your outdoor space.</h2>
           </div>
-          <Link href="/#contact" className="button button-sage">Request a Quote <span aria-hidden="true">→</span></Link>
+          <Link href="/contact" className="button button-sage">Request a Quote <span aria-hidden="true">→</span></Link>
         </div>
       </section>
     </main>

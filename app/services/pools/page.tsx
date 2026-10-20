@@ -31,7 +31,7 @@ const service = {
     { title: 'Planting', href: '/services/planting' },
   ],
   cta: 'Request a Quote',
-  ctaHref: 'mailto:hello@clearviewlandscaping.com?subject=Request%20a%20quote',
+  ctaHref: '/contact',
 }
 
 export default function Page() {
