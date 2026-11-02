@@ -33,9 +33,9 @@ export default function SiteHeader() {
               </div>
             </div>
           </div>
-          <Link href="/projects">Projects</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
+          <Link href="/faqs">FAQs</Link>
         </nav>
         <Link href="/contact" className="button button-dark header-cta">Request a Quote <ArrowUpRight size={15} aria-hidden="true" /></Link>
         <details className="mobile-nav">
@@ -52,9 +52,9 @@ export default function SiteHeader() {
                 <Link href="/services/planting">Planting</Link>
               </nav>
             </details>
-            <Link href="/projects">Projects</Link>
             <Link href="/about">About</Link>
             <Link href="/contact">Contact</Link>
+            <Link href="/faqs">FAQs</Link>
             <Link href="/contact" className="button button-dark">Request a Quote <ArrowUpRight size={15} aria-hidden="true" /></Link>
           </nav>
         </details>

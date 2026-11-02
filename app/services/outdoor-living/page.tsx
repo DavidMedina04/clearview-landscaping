@@ -3,6 +3,8 @@ import ServicePageTemplate from '@/components/service-page-template'
 const service = {
   slug: 'outdoor-living',
   eyebrow: 'Outdoor Living',
+  heroImage: '/Outdoor%20Living/heroimage.jpg',
+  heroPosition: 'center',
   title: 'Create gathering spaces that feel like an extension of home.',
   overview:
     'Outdoor living additions give your yard practical value and everyday comfort, creating beautiful spaces for cooking, relaxing, and entertaining with family and friends.',
@@ -16,10 +18,17 @@ const service = {
     'Warm lighting and integrated hardscape details',
   ],
   gallery: [
-    'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1430285561322-7808604715df?auto=format&fit=crop&w=900&q=80',
+    '/Outdoor%20Living/outdoor%235.jpg',
+    '/Outdoor%20Living/outdoor%236.jpg',
+    '/Outdoor%20Living/outdoor%232.jpg',
+    '/Outdoor%20Living/outdoor%233.jpg',
+    '/Outdoor%20Living/outdoor%231.jpg',
+    '/Outdoor%20Living/outdoor%237.jpg',
+    '/Outdoor%20Living/outdoor%2310.jpg',
+    '/Outdoor%20Living/outdoor%234.jpg',
+    '/Outdoor%20Living/outdoor%238.jpg',
+    '/Outdoor%20Living/outdoor%239.jpg',
+    '/Outdoor%20Living/outdoor%2311.jpg',
   ],
   details: [
     'Outdoor kitchens and gathering spaces should feel easy to use, durable, and connected to the home. We focus on layouts that support daily life as much as entertaining.',

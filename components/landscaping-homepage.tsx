@@ -58,13 +58,10 @@ const services = [
   },
 ]
 
-function BrandMark({ inverted = false }: { inverted?: boolean }) {
-  return (
-    <Link href="/" className={`brand ${inverted ? 'brand-inverted' : ''}`} aria-label="ClearView Landscaping home">
-      <span className="brand-symbol" aria-hidden="true"><span /><span /><span /></span>
-      <span className="brand-wordmark"><strong>clearview</strong><small>LANDSCAPING · CALIFORNIA</small></span>
-    </Link>
-  )
+const featuredProjectScopes: Record<string, string> = {
+  'riverside-backyard-remodel': 'A paver patio, outdoor kitchen, and fire feature create practical zones for dining and relaxing. Updated planting softens the hardscape and ties the backyard together.',
+  'orange-county-outdoor-living': 'A patio and pergola create a shaded gathering area connected to the lawn and garden. Pavers, planting, and a fire feature make the yard comfortable for everyday use and entertaining.',
+  'inland-empire-front-yard': 'Fresh turf, structured planting, and a clearer entry path refresh the front yard. The updated layout improves curb appeal while keeping maintenance straightforward.',
 }
 
 function Hero() {
@@ -133,19 +130,31 @@ function ProjectsSection() {
   return (
     <section className="projects-section section-pad" id="projects">
       <div className="page-shell">
-        <div className="projects-heading"><SectionIntro eyebrow="Featured Projects" title={<>Outdoor upgrades<br />that add value.</>} copy="See recent front yard, patio, and backyard transformations built for Riverside and Southern California homeowners." /><Link href="/projects" className="text-link">Explore Projects <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
-        <div className="projects-grid">
+        <div className="projects-heading"><SectionIntro eyebrow="Featured Projects" title={<>Outdoor upgrades<br />that add value.</>} copy="See recent front yard, patio, and backyard transformations built for Riverside and Southern California homeowners." /></div>
+        <div className="project-showcases">
           {projects.slice(0, 3).map((project, index) => (
-            <article className={`project-card ${project.className}`} key={project.name}>
-              <Link href={`/projects/${project.slug}`} className="project-image-wrap" aria-label={`View ${project.name} project`}>
-                <Image src={project.image} alt={project.alt} fill sizes={index === 0 ? '(max-width: 700px) 100vw, 58vw' : '(max-width: 700px) 100vw, 36vw'} className="project-image" />
-                <span className="project-arrow"><ArrowUpRight size={18} aria-hidden="true" /></span>
-              </Link>
-              <div className="project-caption"><div><p>{project.caption}</p><h3>{project.name}</h3></div><span><MapPin size={13} aria-hidden="true" />{project.location}</span></div>
+            <article className={`project-showcase${index % 2 === 1 ? ' project-showcase-reverse' : ''}`} key={project.slug}>
+              <div className="project-showcase-info">
+                <p className="project-showcase-category">{project.category}</p>
+                <h3>{project.name}</h3>
+                <p className="project-showcase-location"><MapPin size={14} aria-hidden="true" />{project.location}</p>
+                <p className="project-showcase-scope">{featuredProjectScopes[project.slug]}</p>
+              </div>
+              <div className="project-showcase-media">
+                <div className="project-showcase-primary">
+                  <Image src={project.image} alt={project.alt} fill sizes="(max-width: 760px) 100vw, 62vw" />
+                </div>
+                <div className="project-showcase-supporting">
+                  {project.gallery.slice(1, 4).map((image, imageIndex) => (
+                    <div className="project-showcase-supporting-image" key={`${project.slug}-${image}`}>
+                      <Image src={image} alt={`${project.name} supporting view ${imageIndex + 1}`} fill sizes="(max-width: 760px) 50vw, 30vw" />
+                    </div>
+                  ))}
+                </div>
+              </div>
             </article>
           ))}
         </div>
-        <div className="projects-footnote"><span>01 — 03</span><span>Thoughtful landscaping for everyday living.</span></div>
       </div>
     </section>
   )
@@ -200,13 +209,7 @@ function ContactSection() {
   )
 }
 
-function SiteFooter() {
-  return (
-    <footer className="site-footer"><div className="page-shell"><div className="footer-main"><div className="footer-brand-block"><BrandMark inverted /><p>Landscape design and installation<br />for Southern California homeowners.</p></div><div className="footer-column"><h2>Explore</h2><Link href="#services">Services</Link><Link href="/projects">Projects</Link><Link href="/about">About ClearView</Link></div><div className="footer-column"><h2>Get in touch</h2><Link href="/contact">Request a Quote</Link><Link href="mailto:hello@clearviewlandscaping.com">Email our team</Link><span>Riverside, California</span></div><div className="footer-column footer-area"><h2>Service area</h2><span>Riverside · Inland Empire</span><span>Orange County · Los Angeles</span><span>Southern California</span></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} ClearView Landscaping</span><span>Built for the outdoors.</span><Link href="#home">BACK TO TOP ↑</Link></div></div></footer>
-  )
-}
-
 export default function LandscapingHomepage() {
-  return <><Hero /><TrustStrip /><ServicesSection /><ProjectsSection /><AboutSection /><ProcessSection /><TestimonialSection /><ServiceAreaSection /><ContactSection /><SiteFooter /></>
+  return <><Hero /><TrustStrip /><ServicesSection /><ProjectsSection /><AboutSection /><ProcessSection /><TestimonialSection /><ServiceAreaSection /><ContactSection /></>
 }
 

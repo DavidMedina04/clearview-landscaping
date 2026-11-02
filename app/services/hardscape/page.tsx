@@ -3,6 +3,8 @@ import ServicePageTemplate from '@/components/service-page-template'
 const service = {
   slug: 'hardscape',
   eyebrow: 'Hardscape',
+  heroImage: '/Hardscape/hardscape%236.jpg',
+  heroPosition: 'center',
   title: 'Durable patios, walls, and surfaces built for California living.',
   overview:
     'We design and install hardscape features that improve structure, comfort, and flow across your yard while creating long-lasting surfaces that stand up to daily use and the local climate.',
@@ -16,10 +18,18 @@ const service = {
     'Material matching and drainage-aware installation',
   ],
   gallery: [
-    'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=900&q=80',
+    '/Hardscape/hardscape%235.jpg',
+    '/Hardscape/hardscape%236.jpg',
+    '/Hardscape/hardscape%231.jpg',
+    '/Hardscape/hardscape%232.jpg',
+    '/Hardscape/hardscape%237.jpg',
+    '/Hardscape/hardscape%239.jpg',
+    '/Hardscape/hardscape%238.jpg',
+    '/Hardscape/hardscape%2311.jpg',
+    '/Hardscape/hardscape%233.jpg',
+    '/Hardscape/hardscape%234.webp',
+    '/Hardscape/hardscape%2310.jpg',
+    '/Hardscape/hardscape%2312.jpg',
   ],
   details: [
     'Every hardscape project begins with a clear plan for layout, use, and drainage. We help define the right material, shape, and finish to support the way you use the space.',

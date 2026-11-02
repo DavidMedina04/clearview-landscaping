@@ -80,14 +80,14 @@ export default function ServicePageTemplate({ service }: ServicePageProps) {
         </div>
       </section>
 
-      <section className={`service-gallery section-pad${service.slug === 'full-yard-remodels' ? ' service-gallery-full-yard' : ''}`}>
+      <section className={`service-gallery section-pad${service.slug === 'full-yard-remodels' ? ' service-gallery-full-yard' : service.slug === 'hardscape' ? ' service-gallery-hardscape' : service.slug === 'outdoor-living' ? ' service-gallery-outdoor-living' : ''}`}>
         <div className="page-shell">
           <p className="eyebrow"><span /> Project Gallery</p>
-          <div className={`gallery-grid${service.slug === 'full-yard-remodels' ? ' gallery-grid-full-yard' : ''}`}>
+          <div className={`gallery-grid${service.slug === 'full-yard-remodels' ? ' gallery-grid-full-yard' : service.slug === 'hardscape' ? ' gallery-grid-hardscape' : service.slug === 'outdoor-living' ? ' gallery-grid-outdoor-living' : ''}`}>
             {service.gallery.map((image, index) => (
               <div
                 className="gallery-item"
-                data-gallery-image={service.slug === 'full-yard-remodels' ? image.match(/full-yard-(\d+)\.(?:jpg|jpeg|webp)$/)?.[1] : undefined}
+                data-gallery-image={service.slug === 'full-yard-remodels' ? image.match(/full-yard-(\d+)\.(?:jpg|jpeg|webp)$/)?.[1] : service.slug === 'hardscape' ? image.match(/hardscape%23(\d+)\.(?:jpg|webp)$/)?.[1] : service.slug === 'outdoor-living' ? image.match(/outdoor%23(\d+)\.(?:jpg|webp)$/)?.[1] : undefined}
                 key={`${service.slug}-${index}`}
               >
                 <img src={image} alt={`${service.title} project preview ${index + 1}`} />
@@ -111,15 +111,6 @@ export default function ServicePageTemplate({ service }: ServicePageProps) {
         </div>
       </section>
 
-      <section className="service-cta-wrap">
-        <div className="page-shell service-cta-inner">
-          <div>
-            <p className="eyebrow eyebrow-light"><span /> Ready to start?</p>
-            <h3>Let&apos;s plan your outdoor project.</h3>
-          </div>
-          <Link href={service.ctaHref} className="button button-sage">{service.cta} <span aria-hidden="true">→</span></Link>
-        </div>
-      </section>
       </main>
     </>
   )

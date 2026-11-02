@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import { Inter, Manrope } from 'next/font/google'
 import type { Metadata, Viewport } from 'next'
+import SiteFooter from '@/components/site-footer'
 import './globals.css'
 
 const inter = Inter({
@@ -55,6 +56,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${manrope.variable} antialiased`}>
         {children}
+        <SiteFooter />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
