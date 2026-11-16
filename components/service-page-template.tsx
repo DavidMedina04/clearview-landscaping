@@ -80,14 +80,14 @@ export default function ServicePageTemplate({ service }: ServicePageProps) {
         </div>
       </section>
 
-      <section className={`service-gallery section-pad${service.slug === 'full-yard-remodels' ? ' service-gallery-full-yard' : service.slug === 'hardscape' ? ' service-gallery-hardscape' : service.slug === 'outdoor-living' ? ' service-gallery-outdoor-living' : ''}`}>
+      <section className={`service-gallery section-pad${service.slug === 'full-yard-remodels' ? ' service-gallery-full-yard' : service.slug === 'hardscape' ? ' service-gallery-hardscape' : service.slug === 'outdoor-living' ? ' service-gallery-outdoor-living' : service.slug === 'pools' ? ' service-gallery-pools' : service.slug === 'planting' ? ' service-gallery-planting' : ''}`}>
         <div className="page-shell">
           <p className="eyebrow"><span /> Project Gallery</p>
-          <div className={`gallery-grid${service.slug === 'full-yard-remodels' ? ' gallery-grid-full-yard' : service.slug === 'hardscape' ? ' gallery-grid-hardscape' : service.slug === 'outdoor-living' ? ' gallery-grid-outdoor-living' : ''}`}>
+          <div className={`gallery-grid${service.slug === 'full-yard-remodels' ? ' gallery-grid-full-yard' : service.slug === 'hardscape' ? ' gallery-grid-hardscape' : service.slug === 'outdoor-living' ? ' gallery-grid-outdoor-living' : service.slug === 'pools' ? ' gallery-grid-pools' : service.slug === 'planting' ? ' gallery-grid-planting' : ''}`}>
             {service.gallery.map((image, index) => (
               <div
                 className="gallery-item"
-                data-gallery-image={service.slug === 'full-yard-remodels' ? image.match(/full-yard-(\d+)\.(?:jpg|jpeg|webp)$/)?.[1] : service.slug === 'hardscape' ? image.match(/hardscape%23(\d+)\.(?:jpg|webp)$/)?.[1] : service.slug === 'outdoor-living' ? image.match(/outdoor%23(\d+)\.(?:jpg|webp)$/)?.[1] : undefined}
+                data-gallery-image={service.slug === 'full-yard-remodels' ? image.match(/full-yard-(\d+)\.(?:jpg|jpeg|webp)$/)?.[1] : service.slug === 'hardscape' ? image.match(/hardscape%23(\d+)\.(?:jpg|webp)$/)?.[1] : service.slug === 'outdoor-living' ? image.match(/outdoor%23(\d+)\.(?:jpg|webp)$/)?.[1] : service.slug === 'pools' || service.slug === 'planting' ? index + 1 : undefined}
                 key={`${service.slug}-${index}`}
               >
                 <img src={image} alt={`${service.title} project preview ${index + 1}`} />
